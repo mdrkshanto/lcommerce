@@ -1,0 +1,6 @@
+@include('frontEnd.mastering.includes.headAssets')
+@include('frontEnd.mastering.includes.topbar')
+@include('frontEnd.mastering.includes.mainManu')
+@yield('frontEndBody')
+@include('frontEnd.mastering.includes.footer')
+@include('frontEnd.mastering.includes.bottomAssets')

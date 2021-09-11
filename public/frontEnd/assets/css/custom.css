@@ -1,0 +1,76 @@
+::placeholder{
+    text-transform: capitalize !important;
+}
+
+.cngLanguage{
+    z-index: 999999 !important;
+}
+
+.mainNav{
+    z-index: 99999 !important;
+}
+
+p{
+    text-align: justify !important;
+}
+
+.categoriesManu{
+    margin-top: 10px !important;
+}
+
+.mainHomeSlider img{
+    height: 20rem;
+}
+
+.searchPage .searchProducts .product img{
+    height: 10rem !important;
+}
+
+.editInfo textarea{
+    resize: none !important;
+    height: 5rem !important;
+}
+
+.myWishlist .img-fluid{
+    width: 5rem !important;
+    height: 3rem !important;
+}
+
+.categoryPage .categoryProducts .product img{
+    height: 10rem !important;
+}
+
+.productPage img.mainImg{
+    height: 30rem !important;
+}
+
+.productPage .productThumbnail img{
+    height: 6rem !important;
+}
+
+.productPage .overView .productColor{
+    background-color: #0d6efd !important;
+}
+
+.review textarea{
+    resize: none !important;
+    height: 5rem !important;
+}
+
+.cartItemsTable .cartItem img{
+    width: 5rem !important;
+    height: 3rem !important;
+}
+
+.cartItemsTable .cartItem td:nth-child(2){
+    width: 7rem !important;
+}
+
+.contactPage iframe.map{
+    height: 20rem !important;
+}
+
+.contactPage .message textarea{
+    resize: none !important;
+    height: 9rem !important;
+}

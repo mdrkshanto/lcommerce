@@ -1,0 +1,1 @@
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.7939334926714!2d90.3895015143485!3d23.754726694529374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b96129a87973%3A0x6854f6bd0887cd86!2sPencilBox%20Training%20Institute%20Lab!5e0!3m2!1sen!2sca!4v1631148227665!5m2!1sen!2sca" class="ratio ratio-4x3 map" allowfullscreen></iframe>
