@@ -9,4 +9,7 @@ class ProductController extends Controller
     public function index(){
         return view('backEnd.product.list.index');
     }
+    public function addProduct(){
+        return view('backEnd.product.addNew.index');
+    }
 }
