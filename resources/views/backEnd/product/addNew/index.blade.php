@@ -18,7 +18,10 @@ Create a new Product
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-              
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-append">Small</span>
+                <input type="text" class="form-control">
+            </div>
           </div>
           <!-- /.card-body -->
         </div>
