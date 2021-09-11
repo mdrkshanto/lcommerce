@@ -1,35 +1,23 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Product
+Products
 @endsection
 @section('backEndBody')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>@yield('backEndTitle')</h1>
-            </div>
-          </div>
-        </div><!-- /.container-fluid -->
-      </section>
-
-      <!-- Main content -->
+        <!-- Main content -->
       <section class="content">
-
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h3 class="card-title">Product List</h3>
-                    <a href="" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
+                    <h3 class="card-title">@yield('backEndTitle')</h3>
+                    <a href="{{ route('addProduct') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
                 </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-bordered table-striped align-middle text-center table-hover">
+              <table id="example1" class="table table-sm table-dark table-bordered table-striped align-middle text-center table-hover small">
                 <thead>
                     <tr>
                         <th>Rendering engine</th>
