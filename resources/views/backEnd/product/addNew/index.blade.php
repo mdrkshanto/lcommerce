@@ -107,7 +107,7 @@ Create a new Product
                       <div class="input-group-prepend">
                         <div class="custom-file">
                           <input type="file" accept="image/*" class="custom-file-input">
-                          <label class="custom-file-label">Choose file</label>
+                          <label class="custom-file-label">Select Image</label>
                         </div>
                       </div>
                       <div class="input-group-append">
@@ -132,10 +132,12 @@ Create a new Product
   <!-- /.content-wrapper -->
 @endsection
 @section('backEndExtraJs')
+<script src="{{ asset('backEnd/assets') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script>
-  $(document).ready(function(){
+$(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Choose file</label></div></div><div class="input-group-append"><select class="form-control"><option>Select Image</option><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option>Select Image</option><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
             $(this).parents('.thumbImg').remove();
@@ -148,7 +150,8 @@ Create a new Product
     $("body").on("click", ".removeProductColor.close", function(){
             $(this).parents('.productColor').remove();
     });
-  });
+    bsCustomFileInput.init();
+});
 </script>
 
 @endsection
