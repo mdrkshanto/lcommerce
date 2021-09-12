@@ -55,7 +55,7 @@ Create a new Product
                       </div>
                       <div class="row productColors">
                         <div class="col-md-3 input-group productColor">
-                          <input type="color" class="form-control form-control-sm" value="#ff0000">
+                          <input type="color" class="form-control form-control-sm" value="#000000">
                         </div>
                       </div>
                     </div>
@@ -100,13 +100,13 @@ Create a new Product
                   <button type="button" class="btn btn-primary btn-sm addImage">Add Image</button>
                 </div>
               </div>
-              <div class="card-body productImages">
-                <div class="row">
-                  <div class="col-12">
+              <div class="card-body">
+                <div class="row productImages">
+                  <div class="col-md-6">
                     <div class="input-group input-group-sm mb-3">
                       <div class="input-group-prepend">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input">
+                          <input type="file" accept="image/*" class="custom-file-input">
                           <label class="custom-file-label">Choose file</label>
                         </div>
                       </div>
@@ -135,7 +135,7 @@ Create a new Product
 <script>
   $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="row thumbImg"><div class="col-12"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" class="custom-file-input"><label class="custom-file-label">Choose file</label></div></div><div class="input-group-append"><select class="form-control"><option>Select Image</option><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Choose file</label></div></div><div class="input-group-append"><select class="form-control"><option>Select Image</option><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
     });
     $("body").on("click", ".removeProductImg", function(){
             $(this).parents('.thumbImg').remove();
@@ -143,7 +143,7 @@ Create a new Product
 
 
     $('.addProductColor').click(function(){
-        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" value="#ff0000"><button type="button" class="close removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
     });
     $("body").on("click", ".removeProductColor.close", function(){
             $(this).parents('.productColor').remove();
