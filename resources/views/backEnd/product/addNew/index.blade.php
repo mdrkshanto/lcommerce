@@ -49,10 +49,15 @@ Create a new Product
               </div>
               <div class="row">
                     <div class="col-md-4">
-                        <div class="mb-3">
-                            <label class="form-label">Product Color</label>
-                            <input type="color" class="form-control form-control-sm" value="#ff0000">
+                      <div class="row justify-content-between input-group-sm input-group">
+                        <label class="form-label">Product Color</label>
+                        <button type="button" class="btn btn-primary btn-sm addProductColor">Add Color</button>
+                      </div>
+                      <div class="row productColors">
+                        <div class="col-md-3 input-group productColor">
+                          <input type="color" class="form-control form-control-sm" value="#ff0000">
                         </div>
+                      </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
@@ -134,6 +139,14 @@ Create a new Product
     });
     $("body").on("click", ".removeProductImg", function(){
             $(this).parents('.thumbImg').remove();
+    });
+
+
+    $('.addProductColor').click(function(){
+        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" value="#ff0000"><button type="button" class="close removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+    });
+    $("body").on("click", ".removeProductColor.close", function(){
+            $(this).parents('.productColor').remove();
     });
   });
 </script>
