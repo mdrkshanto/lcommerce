@@ -100,7 +100,7 @@ Create a new product
         <div class="card-header">
           <div class="row justify-content-between">
             <h5>Product Images</h5>
-            <button type="button" class="btn btn-primary btn-sm addImage">Add Image</button>
+            <button type="button" class="btn btn-primary btn-sm addImage">More Image</button>
           </div>
         </div>
         <div class="card-body">
