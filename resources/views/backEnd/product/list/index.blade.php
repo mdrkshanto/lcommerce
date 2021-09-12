@@ -1,6 +1,6 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Products
+Product List
 @endsection
 @section('backEndBody')
     <!-- Content Wrapper. Contains page content -->

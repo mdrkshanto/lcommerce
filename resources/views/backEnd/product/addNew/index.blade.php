@@ -1,6 +1,6 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Create a new Product
+Create a new product
 @endsection
 @section('backEndBody')
 <!-- Content Wrapper. Contains page content -->
@@ -93,39 +93,38 @@ Create a new Product
                     </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header">
-                <div class="row justify-content-between">
-                  <h5>Product Images</h5>
-                  <button type="button" class="btn btn-primary btn-sm addImage">Add Image</button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="row productImages">
-                  <div class="col-md-6">
-                    <div class="input-group input-group-sm mb-3">
-                      <div class="input-group-prepend">
-                        <div class="custom-file">
-                          <input type="file" accept="image/*" class="custom-file-input">
-                          <label class="custom-file-label">Select Image</label>
-                        </div>
-                      </div>
-                      <div class="input-group-append">
-                        <select class="form-control">
-                          <option>Select Image</option>
-                          <option value="1" selected>Main Image</option>
-                          <option value="2">Thumb Image</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
           <!-- /.card-body -->
         </div>
       <!-- /.card -->
+      <div class="card">
+        <div class="card-header">
+          <div class="row justify-content-between">
+            <h5>Product Images</h5>
+            <button type="button" class="btn btn-primary btn-sm addImage">Add Image</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row productImages">
+            <div class="col-md-6">
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <div class="custom-file">
+                    <input type="file" accept="image/*" class="custom-file-input">
+                    <label class="custom-file-label">Select Image</label>
+                  </div>
+                </div>
+                <div class="input-group-append">
+                  <select class="form-control">
+                    <option value="1" selected>Main Image</option>
+                    <option value="2">Thumb Image</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
     </section>
     <!-- /.content -->
   </div>
@@ -136,7 +135,7 @@ Create a new Product
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option>Select Image</option><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
