@@ -26,5 +26,6 @@ Route::get('/product', [FrontEndRouteController::class, 'product'])->name('produ
 Route::get('/dashboard', [ProductController::class,'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/productl-list', [ProductController::class,'index'])->middleware(['auth'])->name('productList');
 Route::get('/add-product', [ProductController::class,'addProduct'])->middleware(['auth'])->name('addProduct');
+Route::post('/add-product-action', [ProductController::class,'addProductAction'])->middleware(['auth'])->name('addProductAction');
 
 require __DIR__.'/auth.php';

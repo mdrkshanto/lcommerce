@@ -12,4 +12,7 @@ class ProductController extends Controller
     public function addProduct(){
         return view('backEnd.product.addNew.index');
     }
+    public function addProductAction(Request $request){
+        return $request->all();
+    }
 }
