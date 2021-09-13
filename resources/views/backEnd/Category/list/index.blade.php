@@ -20,29 +20,29 @@ Category List
               <table id="example1" class="table table-sm table-dark table-bordered table-striped align-middle text-center table-hover small">
                 <thead>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>#</th>
+                        <th>Category Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @php($i = 1)
+                    @foreach ($categories as $category)
                     <tr>
-                        <td>Trident</td>
-                        <td>Internet Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <td>{{ $i++ }}</td>
+                        <td>{{ $category->categoryName }}</td>
+                        <td>{{ $category->status == '1' ? 'Active' : 'Inactive' }}</td>
+                        <td>asdf</td>
                     </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>#</th>
+                        <th>Category Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
               </table>

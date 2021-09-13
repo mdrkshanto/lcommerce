@@ -28,8 +28,8 @@ Route::get('/add-product', [ProductController::class,'addProduct'])->name('addPr
 Route::post('/add-product-action', [ProductController::class,'addProductAction'])->name('addProductAction');
     // Category
 Route::get('/category-list', [CategoryController::class,'index'])->name('categoryList');
-Route::get('/add-category', [CategoryController::class,'addProduct'])->name('addCategory');
-Route::post('/add-category-action', [CategoryController::class,'addProductAction'])->name('addCategoryAction');
+Route::get('/add-category', [CategoryController::class,'addCategory'])->name('addCategory');
+Route::post('/add-category-action', [CategoryController::class,'addCategoryAction'])->name('addCategoryAction');
 
 
 

@@ -17,7 +17,7 @@ Create a new product
               </div>
           </div>
           <!-- /.card-header -->
-          <form action="{{ route('addProductAction') }}" method="post" autocomplete="off">
+          <form action="{{ route('addProductAction') }}" method="post" autocomplete="off" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
               <div class="row">
