@@ -30,8 +30,7 @@ Create a new product
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Cetegory</label>
-                            <select class="form-control form-control-sm form-select form-select-sm">
-                                <option selected>Select Cetegory</option>
+                            <select class="form-control form-control-sm form-select form-select-sm" name="productCetegory">
                                 <option value="1">Main Image</option>
                                 <option value="2">Thumb Image</option>
                             </select>
@@ -40,8 +39,7 @@ Create a new product
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Brand</label>
-                            <select class="form-control form-control-sm form-select form-select-sm">
-                                <option selected>Select Brand</option>
+                            <select class="form-control form-control-sm form-select form-select-sm" name="productBrand">
                                 <option value="1">Main Image</option>
                                 <option value="2">Thumb Image</option>
                             </select>
@@ -168,7 +166,17 @@ Create a new product
         </div>
       </div>
       <div class="row">
-          <button type="submit" class="btn btn-primary btn-sm btn-block">Submit</button>
+          <div class="col-md-6">
+            <div class="input-group-append">
+                <select class="form-control form-control-sm" name="productStatus">
+                    <option value="1" selected>Active</option>
+                    <option value="2">Inactive</option>
+                </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-sm btn-block">Submit</button>
+          </div>
       </div>
     </form>
 </section>
@@ -183,7 +191,7 @@ Create a new product
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option value="1" name="productImageType">Main Image</option><option value="2" selected name="productImageType">Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control" name="productImageType"><option value="1" name="productImageType">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
