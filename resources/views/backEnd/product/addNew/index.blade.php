@@ -18,12 +18,13 @@ Create a new product
           </div>
           <!-- /.card-header -->
           <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+            @csrf
             <div class="card-body">
               <div class="row">
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Name</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Product Name">
+                            <input type="text" class="form-control form-control-sm" name="productName" placeholder="Product Name">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -55,40 +56,82 @@ Create a new product
                       </div>
                       <div class="row productColors">
                         <div class="col-md-3 input-group productColor">
-                          <input type="color" class="form-control form-control-sm" value="#000000">
+                          <input type="color" class="form-control form-control-sm" name="productColor" value="#000000">
                         </div>
                       </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Regular Price</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Regular Price">
+                            <input type="text" class="form-control form-control-sm" name="productRegularPrice" placeholder="Regular Price">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Discount Price</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Discount Price">
+                            <input type="text" class="form-control form-control-sm" name="productDiscountPrice" placeholder="Discount Price">
                         </div>
                     </div>
               </div>
               <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Product Color</label>
-                            <input type="color" class="form-control form-control-sm" value="#ff0000">
+                            <div class="card card-outline card-info">
+                              <div class="card-header">
+                                <h3 class="card-title">
+                                    Product Details
+                                </h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <textarea class="productDetails" name="productDetails"></textarea>
+                              </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Regular Price</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Regular Price">
+                            <div class="card card-outline card-info">
+                              <div class="card-header">
+                                <h3 class="card-title">
+                                    Product Short Description
+                                </h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <textarea class="productShortDescription" name="productShortDescription"></textarea>
+                              </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Discount Price</label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Discount Price">
+                            <div class="card card-outline card-info">
+                              <div class="card-header">
+                                <h3 class="card-title">
+                                    Product Description
+                                </h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <textarea class="productDescription" name="productDescription"></textarea>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <div class="card card-outline card-info">
+                              <div class="card-header">
+                                <h3 class="card-title">
+                                    Delivery Process
+                                </h3>
+                              </div>
+                              <!-- /.card-header -->
+                              <div class="card-body">
+                                <textarea class="deliveryProcess" name="deliveryProcess"></textarea>
+                              </div>
+                            </div>
                         </div>
                     </div>
               </div>
@@ -109,14 +152,14 @@ Create a new product
               <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <div class="custom-file">
-                    <input type="file" accept="image/*" class="custom-file-input">
+                    <input type="file" accept="image/*" class="custom-file-input" name="productImage">
                     <label class="custom-file-label">Select Image</label>
                   </div>
                 </div>
                 <div class="input-group-append">
                   <select class="form-control">
-                    <option value="1" selected>Main Image</option>
-                    <option value="2">Thumb Image</option>
+                    <option value="1" selected name="productImageType">Main Image</option>
+                    <option value="2" name="productImageType">Thumb Image</option>
                   </select>
                 </div>
               </div>
@@ -124,18 +167,23 @@ Create a new product
           </div>
         </div>
       </div>
+      <div class="row">
+          <button type="submit" class="btn btn-primary btn-sm btn-block">Submit</button>
+      </div>
     </form>
-    </section>
+</section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 @endsection
 @section('backEndExtraJs')
 <script src="{{ asset('backEnd/assets') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- Summernote -->
+<script src="{{ asset('backEnd/assets') }}/plugins/summernote/summernote-bs4.min.js"></script>
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control"><option value="1" name="productImageType">Main Image</option><option value="2" selected name="productImageType">Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
@@ -144,12 +192,16 @@ $(document).ready(function(){
 
 
     $('.addProductColor').click(function(){
-        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" name="productColor" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
     });
     $("body").on("click", ".removeProductColor.close", function(){
             $(this).parents('.productColor').remove();
     });
     bsCustomFileInput.init();
+    $('.productDetails').summernote()
+    $('.productShortDescription').summernote()
+    $('.productDescription').summernote()
+    $('.deliveryProcess').summernote()
 });
 </script>
 
