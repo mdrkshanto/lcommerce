@@ -20,7 +20,7 @@ Category List
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-bordered table-striped align-middle text-center table-hover small">
+              <table id="example1" class="table table-sm table-dark table-striped align-middle text-center table-hover">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -36,7 +36,12 @@ Category List
                         <td>{{ $i++ }}</td>
                         <td>{{ $category->categoryName }}</td>
                         <td>{{ $category->status == '1' ? 'Active' : 'Inactive' }}</td>
-                        <td>asdf</td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="" class="btn btn-success">Update</a>
+                                <a href="" class="btn btn-danger">Delete</a>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
