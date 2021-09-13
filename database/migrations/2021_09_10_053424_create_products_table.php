@@ -26,8 +26,9 @@ class CreateProductsTable extends Migration
             $table->text('productShortDescription')->required();
             $table->text('productDescription')->required();
             $table->text('productDeliveryProcess')->required();
-            $table->string('productImages')->nullable();
             $table->enum('productStatus',['1','2'])->required();
+            $table->integer('updatedBy')->nullable();
+            $table->integer('createdBy')->required();
             $table->timestamps();
         });
     }
