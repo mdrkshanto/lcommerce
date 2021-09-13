@@ -34,43 +34,23 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('productList') }}" class="nav-link{{  request()->routeIs('productList' || 'addProduct') ? ' active' : '' }}">
-              <i class="nav-icon fas fa-boxes"></i>
-              <p>
-                Products
-                {{-- <span class="right badge badge-danger">New</span> --}}
-              </p>
+            <a href="{{ route('categoryList') }}" class="nav-link{{  request()->routeIs('categoryList') || request()->routeIs('addCategory') ? ' bg-secondary active' : '' }}">
+                <i class="fas fa-sitemap"></i>
+                <p>Categories</p>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-boxes"></i>
-              <p>
-                Products
-                <i class="right fas fa-angle-left"></i>
-              </p>
+          <li class="nav-item">
+            <a href="" class="nav-link">
+                <i class="fas fa-certificate"></i>
+                <p>Brands</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>productList v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>productList v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>productList v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>           --}}
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('productList') }}" class="nav-link{{  request()->routeIs('productList') || request()->routeIs('addProduct') ? ' bg-secondary active' : '' }}">
+              <i class="nav-icon fas fa-boxes"></i>
+              <p>Products</p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -1,14 +1,14 @@
 /*!
- * 
+ *
  * Super simple wysiwyg editor v0.8.18
  * https://summernote.org
- * 
- * 
+ *
+ *
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license.
- * 
+ *
  * Date: 2020-05-20T16:47Z
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -2125,8 +2125,8 @@ function isCustomStyleTag(node) {
   /** @property {String} blank */
   blank: blankHTML,
 
-  /** @property {String} emptyPara */
-  emptyPara: "<p>".concat(blankHTML, "</p>"),
+  /* @property {String} emptyPara */
+//   emptyPara: "<p>".concat(blankHTML, "</p>"),
   makePredByNodeName: makePredByNodeName,
   isEditable: isEditable,
   isControlSizing: isControlSizing,
@@ -7498,36 +7498,36 @@ var Buttons_Buttons = /*#__PURE__*/function () {
     value: function addToolbarButtons() {
       var _this2 = this;
 
-      this.context.memo('button.style', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.magic), _this2.options),
-          tooltip: _this2.lang.style.style,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdown({
-          className: 'dropdown-style',
-          items: _this2.options.styleTags,
-          title: _this2.lang.style.style,
-          template: function template(item) {
-            // TBD: need to be simplified
-            if (typeof item === 'string') {
-              item = {
-                tag: item,
-                title: Object.prototype.hasOwnProperty.call(_this2.lang.style, item) ? _this2.lang.style[item] : item
-              };
-            }
+    //   this.context.memo('button.style', function () {
+    //     return _this2.ui.buttonGroup([_this2.button({
+    //       className: 'dropdown-toggle',
+    //       contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.magic), _this2.options),
+    //       tooltip: _this2.lang.style.style,
+    //       data: {
+    //         toggle: 'dropdown'
+    //       }
+    //     }), _this2.ui.dropdown({
+    //       className: 'dropdown-style',
+    //       items: _this2.options.styleTags,
+    //       title: _this2.lang.style.style,
+    //       template: function template(item) {
+    //         // TBD: need to be simplified
+    //         if (typeof item === 'string') {
+    //           item = {
+    //             tag: item,
+    //             title: Object.prototype.hasOwnProperty.call(_this2.lang.style, item) ? _this2.lang.style[item] : item
+    //           };
+    //         }
 
-            var tag = item.tag;
-            var title = item.title;
-            var style = item.style ? ' style="' + item.style + '" ' : '';
-            var className = item.className ? ' class="' + item.className + '"' : '';
-            return '<' + tag + style + className + '>' + title + '</' + tag + '>';
-          },
-          click: _this2.context.createInvokeHandler('editor.formatBlock')
-        })]).render();
-      });
+    //         var tag = item.tag;
+    //         var title = item.title;
+    //         var style = item.style ? ' style="' + item.style + '" ' : '';
+    //         var className = item.className ? ' class="' + item.className + '"' : '';
+    //         return '<' + tag + style + className + '>' + title + '</' + tag + '>';
+    //       },
+    //       click: _this2.context.createInvokeHandler('editor.formatBlock')
+    //     })]).render();
+    //   });
 
       var _loop = function _loop(styleIdx, styleLen) {
         var item = _this2.options.styleTags[styleIdx];
@@ -7617,65 +7617,65 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           });
         }
 
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontname"></span>', _this2.options),
-          tooltip: _this2.lang.font.name,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontname',
-          checkClassName: _this2.options.icons.menuCheck,
-          items: _this2.options.fontNames.filter(_this2.isFontInstalled.bind(_this2)),
-          title: _this2.lang.font.name,
-          template: function template(item) {
-            return '<span style="font-family: ' + env.validFontName(item) + '">' + item + '</span>';
-          },
-          click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontName')
-        })]).render();
+        // return _this2.ui.buttonGroup([_this2.button({
+        //   className: 'dropdown-toggle',
+        //   contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontname"></span>', _this2.options),
+        //   tooltip: _this2.lang.font.name,
+        //   data: {
+        //     toggle: 'dropdown'
+        //   }
+        // }), _this2.ui.dropdownCheck({
+        //   className: 'dropdown-fontname',
+        //   checkClassName: _this2.options.icons.menuCheck,
+        //   items: _this2.options.fontNames.filter(_this2.isFontInstalled.bind(_this2)),
+        //   title: _this2.lang.font.name,
+        //   template: function template(item) {
+        //     return '<span style="font-family: ' + env.validFontName(item) + '">' + item + '</span>';
+        //   },
+        //   click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontName')
+        // })]).render();
       });
-      this.context.memo('button.fontsize', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsize"></span>', _this2.options),
-          tooltip: _this2.lang.font.size,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontsize',
-          checkClassName: _this2.options.icons.menuCheck,
-          items: _this2.options.fontSizes,
-          title: _this2.lang.font.size,
-          click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontSize')
-        })]).render();
-      });
-      this.context.memo('button.fontsizeunit', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsizeunit"></span>', _this2.options),
-          tooltip: _this2.lang.font.sizeunit,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdownCheck({
-          className: 'dropdown-fontsizeunit',
-          checkClassName: _this2.options.icons.menuCheck,
-          items: _this2.options.fontSizeUnits,
-          title: _this2.lang.font.sizeunit,
-          click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontSizeUnit')
-        })]).render();
-      });
-      this.context.memo('button.color', function () {
-        return _this2.colorPalette('note-color-all', _this2.lang.color.recent, true, true);
-      });
-      this.context.memo('button.forecolor', function () {
-        return _this2.colorPalette('note-color-fore', _this2.lang.color.foreground, false, true);
-      });
-      this.context.memo('button.backcolor', function () {
-        return _this2.colorPalette('note-color-back', _this2.lang.color.background, true, false);
-      });
+    //   this.context.memo('button.fontsize', function () {
+    //     return _this2.ui.buttonGroup([_this2.button({
+    //       className: 'dropdown-toggle',
+    //       contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsize"></span>', _this2.options),
+    //       tooltip: _this2.lang.font.size,
+    //       data: {
+    //         toggle: 'dropdown'
+    //       }
+    //     }), _this2.ui.dropdownCheck({
+    //       className: 'dropdown-fontsize',
+    //       checkClassName: _this2.options.icons.menuCheck,
+    //       items: _this2.options.fontSizes,
+    //       title: _this2.lang.font.size,
+    //       click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontSize')
+    //     })]).render();
+    //   });
+    //   this.context.memo('button.fontsizeunit', function () {
+    //     return _this2.ui.buttonGroup([_this2.button({
+    //       className: 'dropdown-toggle',
+    //       contents: _this2.ui.dropdownButtonContents('<span class="note-current-fontsizeunit"></span>', _this2.options),
+    //       tooltip: _this2.lang.font.sizeunit,
+    //       data: {
+    //         toggle: 'dropdown'
+    //       }
+    //     }), _this2.ui.dropdownCheck({
+    //       className: 'dropdown-fontsizeunit',
+    //       checkClassName: _this2.options.icons.menuCheck,
+    //       items: _this2.options.fontSizeUnits,
+    //       title: _this2.lang.font.sizeunit,
+    //       click: _this2.context.createInvokeHandlerAndUpdateState('editor.fontSizeUnit')
+    //     })]).render();
+    //   });
+    //   this.context.memo('button.color', function () {
+    //     return _this2.colorPalette('note-color-all', _this2.lang.color.recent, true, true);
+    //   });
+    //   this.context.memo('button.forecolor', function () {
+    //     return _this2.colorPalette('note-color-fore', _this2.lang.color.foreground, false, true);
+    //   });
+    //   this.context.memo('button.backcolor', function () {
+    //     return _this2.colorPalette('note-color-back', _this2.lang.color.background, true, false);
+    //   });
       this.context.memo('button.ul', function () {
         return _this2.button({
           contents: _this2.ui.icon(_this2.options.icons.unorderedlist),
@@ -7683,13 +7683,13 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('editor.insertUnorderedList')
         }).render();
       });
-      this.context.memo('button.ol', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.orderedlist),
-          tooltip: _this2.lang.lists.ordered + _this2.representShortcut('insertOrderedList'),
-          click: _this2.context.createInvokeHandler('editor.insertOrderedList')
-        }).render();
-      });
+    //   this.context.memo('button.ol', function () {
+    //     return _this2.button({
+    //       contents: _this2.ui.icon(_this2.options.icons.orderedlist),
+    //       tooltip: _this2.lang.lists.ordered + _this2.representShortcut('insertOrderedList'),
+    //       click: _this2.context.createInvokeHandler('editor.insertOrderedList')
+    //     }).render();
+    //   });
       var justifyLeft = this.button({
         contents: this.ui.icon(this.options.icons.alignLeft),
         tooltip: this.lang.paragraph.left + this.representShortcut('justifyLeft'),
@@ -7720,28 +7720,28 @@ var Buttons_Buttons = /*#__PURE__*/function () {
         tooltip: this.lang.paragraph.indent + this.representShortcut('indent'),
         click: this.context.createInvokeHandler('editor.indent')
       });
-      this.context.memo('button.justifyLeft', func.invoke(justifyLeft, 'render'));
-      this.context.memo('button.justifyCenter', func.invoke(justifyCenter, 'render'));
-      this.context.memo('button.justifyRight', func.invoke(justifyRight, 'render'));
-      this.context.memo('button.justifyFull', func.invoke(justifyFull, 'render'));
-      this.context.memo('button.outdent', func.invoke(outdent, 'render'));
-      this.context.memo('button.indent', func.invoke(indent, 'render'));
-      this.context.memo('button.paragraph', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.alignLeft), _this2.options),
-          tooltip: _this2.lang.paragraph.paragraph,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdown([_this2.ui.buttonGroup({
-          className: 'note-align',
-          children: [justifyLeft, justifyCenter, justifyRight, justifyFull]
-        }), _this2.ui.buttonGroup({
-          className: 'note-list',
-          children: [outdent, indent]
-        })])]).render();
-      });
+    //   this.context.memo('button.justifyLeft', func.invoke(justifyLeft, 'render'));
+    //   this.context.memo('button.justifyCenter', func.invoke(justifyCenter, 'render'));
+    //   this.context.memo('button.justifyRight', func.invoke(justifyRight, 'render'));
+    //   this.context.memo('button.justifyFull', func.invoke(justifyFull, 'render'));
+    //   this.context.memo('button.outdent', func.invoke(outdent, 'render'));
+    //   this.context.memo('button.indent', func.invoke(indent, 'render'));
+    //   this.context.memo('button.paragraph', function () {
+    //     return _this2.ui.buttonGroup([_this2.button({
+    //       className: 'dropdown-toggle',
+    //       contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.alignLeft), _this2.options),
+    //       tooltip: _this2.lang.paragraph.paragraph,
+    //       data: {
+    //         toggle: 'dropdown'
+    //       }
+    //     }), _this2.ui.dropdown([_this2.ui.buttonGroup({
+    //       className: 'note-align',
+    //       children: [justifyLeft, justifyCenter, justifyRight, justifyFull]
+    //     }), _this2.ui.buttonGroup({
+    //       className: 'note-list',
+    //       children: [outdent, indent]
+    //     })])]).render();
+    //   });
       this.context.memo('button.height', function () {
         return _this2.ui.buttonGroup([_this2.button({
           className: 'dropdown-toggle',
@@ -7758,28 +7758,28 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('editor.lineHeight')
         })]).render();
       });
-      this.context.memo('button.table', function () {
-        return _this2.ui.buttonGroup([_this2.button({
-          className: 'dropdown-toggle',
-          contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.table), _this2.options),
-          tooltip: _this2.lang.table.table,
-          data: {
-            toggle: 'dropdown'
-          }
-        }), _this2.ui.dropdown({
-          title: _this2.lang.table.table,
-          className: 'note-table',
-          items: ['<div class="note-dimension-picker">', '<div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1"></div>', '<div class="note-dimension-picker-highlighted"></div>', '<div class="note-dimension-picker-unhighlighted"></div>', '</div>', '<div class="note-dimension-display">1 x 1</div>'].join('')
-        })], {
-          callback: function callback($node) {
-            var $catcher = $node.find('.note-dimension-picker-mousecatcher');
-            $catcher.css({
-              width: _this2.options.insertTableMaxSize.col + 'em',
-              height: _this2.options.insertTableMaxSize.row + 'em'
-            }).mousedown(_this2.context.createInvokeHandler('editor.insertTable')).on('mousemove', _this2.tableMoveHandler.bind(_this2));
-          }
-        }).render();
-      });
+    //   this.context.memo('button.table', function () {
+    //     return _this2.ui.buttonGroup([_this2.button({
+    //       className: 'dropdown-toggle',
+    //       contents: _this2.ui.dropdownButtonContents(_this2.ui.icon(_this2.options.icons.table), _this2.options),
+    //       tooltip: _this2.lang.table.table,
+    //       data: {
+    //         toggle: 'dropdown'
+    //       }
+    //     }), _this2.ui.dropdown({
+    //       title: _this2.lang.table.table,
+    //       className: 'note-table',
+    //       items: ['<div class="note-dimension-picker">', '<div class="note-dimension-picker-mousecatcher" data-event="insertTable" data-value="1x1"></div>', '<div class="note-dimension-picker-highlighted"></div>', '<div class="note-dimension-picker-unhighlighted"></div>', '</div>', '<div class="note-dimension-display">1 x 1</div>'].join('')
+    //     })], {
+    //       callback: function callback($node) {
+    //         var $catcher = $node.find('.note-dimension-picker-mousecatcher');
+    //         $catcher.css({
+    //           width: _this2.options.insertTableMaxSize.col + 'em',
+    //           height: _this2.options.insertTableMaxSize.row + 'em'
+    //         }).mousedown(_this2.context.createInvokeHandler('editor.insertTable')).on('mousemove', _this2.tableMoveHandler.bind(_this2));
+    //       }
+    //     }).render();
+    //   });
       this.context.memo('button.link', function () {
         return _this2.button({
           contents: _this2.ui.icon(_this2.options.icons.link),
@@ -7787,20 +7787,20 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('linkDialog.show')
         }).render();
       });
-      this.context.memo('button.picture', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.picture),
-          tooltip: _this2.lang.image.image,
-          click: _this2.context.createInvokeHandler('imageDialog.show')
-        }).render();
-      });
-      this.context.memo('button.video', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.video),
-          tooltip: _this2.lang.video.video,
-          click: _this2.context.createInvokeHandler('videoDialog.show')
-        }).render();
-      });
+    //   this.context.memo('button.picture', function () {
+    //     return _this2.button({
+    //       contents: _this2.ui.icon(_this2.options.icons.picture),
+    //       tooltip: _this2.lang.image.image,
+    //       click: _this2.context.createInvokeHandler('imageDialog.show')
+    //     }).render();
+    //   });
+    //   this.context.memo('button.video', function () {
+    //     return _this2.button({
+    //       contents: _this2.ui.icon(_this2.options.icons.video),
+    //       tooltip: _this2.lang.video.video,
+    //       click: _this2.context.createInvokeHandler('videoDialog.show')
+    //     }).render();
+    //   });
       this.context.memo('button.hr', function () {
         return _this2.button({
           contents: _this2.ui.icon(_this2.options.icons.minus),
@@ -7808,14 +7808,14 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('editor.insertHorizontalRule')
         }).render();
       });
-      this.context.memo('button.fullscreen', function () {
-        return _this2.button({
-          className: 'btn-fullscreen note-codeview-keep',
-          contents: _this2.ui.icon(_this2.options.icons.arrowsAlt),
-          tooltip: _this2.lang.options.fullscreen,
-          click: _this2.context.createInvokeHandler('fullscreen.toggle')
-        }).render();
-      });
+    //   this.context.memo('button.fullscreen', function () {
+    //     return _this2.button({
+    //       className: 'btn-fullscreen note-codeview-keep',
+    //       contents: _this2.ui.icon(_this2.options.icons.arrowsAlt),
+    //       tooltip: _this2.lang.options.fullscreen,
+    //       click: _this2.context.createInvokeHandler('fullscreen.toggle')
+    //     }).render();
+    //   });
       this.context.memo('button.codeview', function () {
         return _this2.button({
           className: 'btn-codeview note-codeview-keep',
@@ -7838,13 +7838,13 @@ var Buttons_Buttons = /*#__PURE__*/function () {
           click: _this2.context.createInvokeHandler('editor.undo')
         }).render();
       });
-      this.context.memo('button.help', function () {
-        return _this2.button({
-          contents: _this2.ui.icon(_this2.options.icons.question),
-          tooltip: _this2.lang.options.help,
-          click: _this2.context.createInvokeHandler('helpDialog.show')
-        }).render();
-      });
+    //   this.context.memo('button.help', function () {
+    //     return _this2.button({
+    //       contents: _this2.ui.icon(_this2.options.icons.question),
+    //       tooltip: _this2.lang.options.help,
+    //       click: _this2.context.createInvokeHandler('helpDialog.show')
+    //     }).render();
+    //   });
     }
     /**
      * image: [
@@ -9191,80 +9191,80 @@ var HelpDialog_HelpDialog = /*#__PURE__*/function () {
     this.lang = this.options.langInfo;
   }
 
-  HelpDialog_createClass(HelpDialog, [{
-    key: "initialize",
-    value: function initialize() {
-      var $container = this.options.dialogsInBody ? this.$body : this.options.container;
-      var body = ['<p class="text-center">', '<a href="http://summernote.org/" target="_blank">Summernote 0.8.18</a> · ', '<a href="https://github.com/summernote/summernote" target="_blank">Project</a> · ', '<a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a>', '</p>'].join('');
-      this.$dialog = this.ui.dialog({
-        title: this.lang.options.help,
-        fade: this.options.dialogsFade,
-        body: this.createShortcutList(),
-        footer: body,
-        callback: function callback($node) {
-          $node.find('.modal-body,.note-modal-body').css({
-            'max-height': 300,
-            'overflow': 'scroll'
-          });
-        }
-      }).render().appendTo($container);
-    }
-  }, {
-    key: "destroy",
-    value: function destroy() {
-      this.ui.hideDialog(this.$dialog);
-      this.$dialog.remove();
-    }
-  }, {
-    key: "createShortcutList",
-    value: function createShortcutList() {
-      var _this = this;
+//   HelpDialog_createClass(HelpDialog, [{
+//     key: "initialize",
+//     value: function initialize() {
+//       var $container = this.options.dialogsInBody ? this.$body : this.options.container;
+//       var body = ['<p class="text-center">', '<a href="http://summernote.org/" target="_blank">Summernote 0.8.18</a> · ', '<a href="https://github.com/summernote/summernote" target="_blank">Project</a> · ', '<a href="https://github.com/summernote/summernote/issues" target="_blank">Issues</a>', '</p>'].join('');
+//       this.$dialog = this.ui.dialog({
+//         title: this.lang.options.help,
+//         fade: this.options.dialogsFade,
+//         body: this.createShortcutList(),
+//         footer: body,
+//         callback: function callback($node) {
+//           $node.find('.modal-body,.note-modal-body').css({
+//             'max-height': 300,
+//             'overflow': 'scroll'
+//           });
+//         }
+//       }).render().appendTo($container);
+//     }
+//   }, {
+//     key: "destroy",
+//     value: function destroy() {
+//       this.ui.hideDialog(this.$dialog);
+//       this.$dialog.remove();
+//     }
+//   }, {
+//     key: "createShortcutList",
+//     value: function createShortcutList() {
+//       var _this = this;
 
-      var keyMap = this.options.keyMap[env.isMac ? 'mac' : 'pc'];
-      return Object.keys(keyMap).map(function (key) {
-        var command = keyMap[key];
-        var $row = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<div><div class="help-list-item"></div></div>');
-        $row.append(external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<label><kbd>' + key + '</kdb></label>').css({
-          'width': 180,
-          'margin-right': 10
-        })).append(external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<span/>').html(_this.context.memo('help.' + command) || command));
-        return $row.html();
-      }).join('');
-    }
-    /**
-     * show help dialog
-     *
-     * @return {Promise}
-     */
+//       var keyMap = this.options.keyMap[env.isMac ? 'mac' : 'pc'];
+//       return Object.keys(keyMap).map(function (key) {
+//         var command = keyMap[key];
+//         var $row = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<div><div class="help-list-item"></div></div>');
+//         $row.append(external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<label><kbd>' + key + '</kdb></label>').css({
+//           'width': 180,
+//           'margin-right': 10
+//         })).append(external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('<span/>').html(_this.context.memo('help.' + command) || command));
+//         return $row.html();
+//       }).join('');
+//     }
+//     /**
+//      * show help dialog
+//      *
+//      * @return {Promise}
+//      */
 
-  }, {
-    key: "showHelpDialog",
-    value: function showHelpDialog() {
-      var _this2 = this;
+//   }, {
+//     key: "showHelpDialog",
+//     value: function showHelpDialog() {
+//       var _this2 = this;
 
-      return external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default.a.Deferred(function (deferred) {
-        _this2.ui.onDialogShown(_this2.$dialog, function () {
-          _this2.context.triggerEvent('dialog.shown');
+//       return external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default.a.Deferred(function (deferred) {
+//         _this2.ui.onDialogShown(_this2.$dialog, function () {
+//           _this2.context.triggerEvent('dialog.shown');
 
-          deferred.resolve();
-        });
+//           deferred.resolve();
+//         });
 
-        _this2.ui.showDialog(_this2.$dialog);
-      }).promise();
-    }
-  }, {
-    key: "show",
-    value: function show() {
-      var _this3 = this;
+//         _this2.ui.showDialog(_this2.$dialog);
+//       }).promise();
+//     }
+//   }, {
+//     key: "show",
+//     value: function show() {
+//       var _this3 = this;
 
-      this.context.invoke('editor.saveRange');
-      this.showHelpDialog().then(function () {
-        _this3.context.invoke('editor.restoreRange');
-      });
-    }
-  }]);
+//       this.context.invoke('editor.saveRange');
+//       this.showHelpDialog().then(function () {
+//         _this3.context.invoke('editor.restoreRange');
+//       });
+//     }
+//   }]);
 
-  return HelpDialog;
+//   return HelpDialog;
 }();
 
 

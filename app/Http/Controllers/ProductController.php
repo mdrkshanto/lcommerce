@@ -13,6 +13,12 @@ class ProductController extends Controller
         return view('backEnd.product.addNew.index');
     }
     public function addProductAction(Request $request){
+        $request->validate([
+            'productName' => 'required | alpha',
+            'productCetegory' => 'required | numeric',
+            'productBrand' => 'required | numeric',
+            'productName' => 'required | alpha',
+        ]);
         return $request->all();
     }
 }

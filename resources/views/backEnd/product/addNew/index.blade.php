@@ -59,9 +59,6 @@ Create a new product
                         <button type="button" class="btn btn-primary btn-sm addProductColor">Add Color</button>
                       </div>
                       <div class="row productColors">
-                        <div class="col-md-3 input-group productColor">
-                          <input type="color" class="form-control form-control-sm" name="productColor[]" value="#000000">
-                        </div>
                       </div>
                     </div>
                     <div class="col-md-3">
@@ -172,14 +169,15 @@ Create a new product
         </div>
       </div>
       <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-2">
             <div class="input-group-append">
-                <select class="form-control form-control-sm" name="productStatus">
+                <select class="form-control form-control-sm text-center" name="productStatus">
                     <option value="1" selected>Active</option>
                     <option value="2">Inactive</option>
                 </select>
             </div>
           </div>
+          <div class="col-md-4"></div>
           <div class="col-md-6">
             <button type="submit" class="btn btn-primary btn-sm btn-block">Submit</button>
           </div>
@@ -193,15 +191,15 @@ Create a new product
 @section('backEndExtraJs')
 <script src="{{ asset('backEnd/assets') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- Summernote -->
-<script src="{{ asset('backEnd/assets') }}/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="{{ asset('backEnd/assets') }}/plugins/summernote/summernote-bs4.js"></script>
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-prepend"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select></div><div class="input-group-append"><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
-            $(this).parents('.thumbImg').remove();
+        $(this).parents('.thumbImg').remove();
     });
 
 
@@ -209,7 +207,7 @@ $(document).ready(function(){
         $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" name="productColor[]" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
     });
     $("body").on("click", ".removeProductColor.close", function(){
-            $(this).parents('.productColor').remove();
+        $(this).parents('.productColor').remove();
     });
     bsCustomFileInput.init();
     $('.productDetails').summernote()

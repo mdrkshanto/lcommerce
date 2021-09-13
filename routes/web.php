@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontEndRouteController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -20,12 +21,18 @@ Route::get('/cart', [FrontEndRouteController::class, 'cart'])->name('cart');
 Route::get('/contact', [FrontEndRouteController::class, 'contact'])->name('contact');
 Route::get('/product', [FrontEndRouteController::class, 'product'])->name('product');
 
+// Back End Routes
+    // Products
+Route::get('/product-list', [ProductController::class,'index'])->name('productList');
+Route::get('/add-product', [ProductController::class,'addProduct'])->name('addProduct');
+Route::post('/add-product-action', [ProductController::class,'addProductAction'])->name('addProductAction');
+    // Category
+Route::get('/category-list', [CategoryController::class,'index'])->name('categoryList');
+Route::get('/add-category', [CategoryController::class,'addProduct'])->name('addCategory');
+Route::post('/add-category-action', [CategoryController::class,'addProductAction'])->name('addCategoryAction');
+
 
 
 // Admin Routes
 Route::get('/dashboard', [ProductController::class,'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/productl-list', [ProductController::class,'index'])->middleware(['auth'])->name('productList');
-Route::get('/add-product', [ProductController::class,'addProduct'])->middleware(['auth'])->name('addProduct');
-Route::post('/add-product-action', [ProductController::class,'addProductAction'])->middleware(['auth'])->name('addProductAction');
-
 require __DIR__.'/auth.php';

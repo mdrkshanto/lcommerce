@@ -15,20 +15,20 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('productName')->required();
-            $table->integer('cetegoryId')->required();
-            $table->integer('brandId')->required()->unique();
-            $table->string('productModel')->required();
-            $table->string('productColor')->nullable();
-            $table->float('productRegularPrice')->nullable();
-            $table->float('productDiscountPrice')->nullable();
-            $table->text('productDetails')->required();
-            $table->text('productShortDescription')->required();
-            $table->text('productDescription')->required();
-            $table->text('productDeliveryProcess')->required();
-            $table->enum('productStatus',['1','2'])->required();
-            $table->integer('updatedBy')->nullable();
-            $table->integer('createdBy')->required();
+            $table->string('productName');
+            $table->integer('cetegoryId');
+            $table->integer('brandId');
+            $table->string('productModel');
+            $table->string('productColor');
+            $table->float('productRegularPrice',10,2);
+            $table->float('productDiscountPrice',10,2);
+            $table->text('productDetails');
+            $table->text('productShortDescription');
+            $table->text('productDescription');
+            $table->text('productDeliveryProcess');
+            $table->enum('productStatus',['1','2']);
+            $table->integer('updatedBy');
+            $table->integer('createdBy');
             $table->timestamps();
         });
     }
