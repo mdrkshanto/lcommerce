@@ -22,6 +22,6 @@ class CategoryController extends Controller
         $category->categoryName = $request->categoryName;
         $category->status = $request->categoryStatus;
         $category->save();
-        return back();
+        return redirect(route('categoryList'))->with('msg',$category->categoryName.' category created successfully.');
     }
 }

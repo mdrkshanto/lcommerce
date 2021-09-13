@@ -5,6 +5,9 @@ Category List
 @section('backEndBody')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        @if (Session::get('msg'))
+        {{ Session::get('msg') }}
+        @endif
         <!-- Main content -->
       <section class="content">
         <!-- Default box -->
