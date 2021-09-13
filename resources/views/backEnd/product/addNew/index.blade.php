@@ -47,24 +47,30 @@ Create a new product
                     </div>
               </div>
               <div class="row">
-                    <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label class="form-label">Product Model Number</label>
+                        <input type="text" class="form-control form-control-sm" name="productModelNumber" placeholder="Product Model Number">
+                    </div>
+                </div>
+                    <div class="col-md-3">
                       <div class="row justify-content-between input-group-sm input-group">
                         <label class="form-label">Product Color</label>
                         <button type="button" class="btn btn-primary btn-sm addProductColor">Add Color</button>
                       </div>
                       <div class="row productColors">
                         <div class="col-md-3 input-group productColor">
-                          <input type="color" class="form-control form-control-sm" name="productColor" value="#000000">
+                          <input type="color" class="form-control form-control-sm" name="productColor[]" value="#000000">
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Regular Price</label>
                             <input type="text" class="form-control form-control-sm" name="productRegularPrice" placeholder="Regular Price">
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Discount Price</label>
                             <input type="text" class="form-control form-control-sm" name="productDiscountPrice" placeholder="Discount Price">
@@ -155,9 +161,9 @@ Create a new product
                   </div>
                 </div>
                 <div class="input-group-append">
-                  <select class="form-control">
-                    <option value="1" selected name="productImageType">Main Image</option>
-                    <option value="2" name="productImageType">Thumb Image</option>
+                  <select class="form-control" name="productImageType[]">
+                    <option value="1" selected>Main Image</option>
+                    <option value="2">Thumb Image</option>
                   </select>
                 </div>
               </div>
@@ -191,7 +197,7 @@ Create a new product
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control" name="productImageType"><option value="1" name="productImageType">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-append"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
@@ -200,7 +206,7 @@ $(document).ready(function(){
 
 
     $('.addProductColor').click(function(){
-        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" name="productColor" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        $(".productColors").append('<div class="col-md-3 input-group productColor"><input type="color" class="form-control form-control-sm" name="productColor[]" value="#000000"><button type="button" class="close btn btn-sm removeProductColor" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
     });
     $("body").on("click", ".removeProductColor.close", function(){
             $(this).parents('.productColor').remove();
