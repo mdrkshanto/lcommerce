@@ -43,6 +43,7 @@ Category List
                             </div>
                             <div class="input-group-apend">
                               <form action="{{ route('deleteCategory',[$category->id]) }}" method="post">
+                                @csrf
                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
                               </form>
                             </div>
