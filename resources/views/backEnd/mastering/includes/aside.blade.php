@@ -34,7 +34,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('categoryList') }}" class="nav-link{{  request()->routeIs('categoryList') || request()->routeIs('addCategory') ? ' bg-secondary active' : '' }}">
+            <a href="{{ route('categoryList') }}" class="nav-link{{  request()->routeIs('categoryList') || request()->routeIs('addCategory') || request()->routeIs('editCategory') ? ' bg-secondary active' : '' }}">
                 <i class="fas fa-sitemap"></i>
                 <p>Categories</p>
             </a>

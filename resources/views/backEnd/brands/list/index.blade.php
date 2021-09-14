@@ -1,6 +1,6 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Category List
+Brand List
 @endsection
 @section('backEndBody')
     <!-- Content Wrapper. Contains page content -->
@@ -15,7 +15,7 @@ Category List
             <div class="card-header">
                 <div class="row justify-content-between">
                     <h3 class="card-title">@yield('backEndTitle')</h3>
-                    <a href="{{ route('addCategory') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
+                    <a href="{{ route('addBrand') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
                 </div>
             </div>
             <!-- /.card-header -->
@@ -24,25 +24,25 @@ Category List
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Category Name</th>
+                        <th>Brand Name</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php($i = 1)
-                    @foreach ($categories as $category)
+                    @foreach ($brands as $brand)
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $category->categoryName }}</td>
-                        <td>{{ $category->status == '1' ? 'Active' : 'Inactive' }}</td>
+                        <td>{{ $brand->brandName }}</td>
+                        <td>{{ $brand->status == '1' ? 'Active' : 'Inactive' }}</td>
                         <td>
                           <div class="input-group input-group-sm btn-group justify-content-center">
                             <div class="input-group-prepend">
-                              <a href="{{ route('editCategory',[$category->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                              <a href="{{ route('editBrand',[$brand->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                             <div class="input-group-apend">
-                              <form action="{{ route('deleteCategory',[$category->id]) }}" method="post">
+                              <form action="{{ route('deleteBrand',[$brand->id]) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
                               </form>
@@ -55,7 +55,7 @@ Category List
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>Category Name</th>
+                        <th>Brand Name</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
