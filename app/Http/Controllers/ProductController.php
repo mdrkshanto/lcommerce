@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Form;
 
 class ProductController extends Controller
 {
@@ -13,14 +14,20 @@ class ProductController extends Controller
         return view('backEnd.product.addNew.index');
     }
     public function addProductAction(Request $request){
+        
         $request->validate([
             'productName' => 'required | alpha',
             'productCetegory' => 'required | numeric',
             'productBrand' => 'required | numeric',
-            'productName' => 'required | alpha',
+            // 'productName' => 'required | alpha',
         ]);
-        // return $request->all();
-        $imgPath = $request->file('productImage');
-        dd($imgPath);
+        
+        $img = $request->file('productImage');
+        return $img;
+        $imgName = time().rand().'.'.$img->getClientOriginalExtension();
+        // $img->move(public_path('forntEnd/assets/img/product'),$imgName);
+        // $imgPath = public_path('forntEnd/assets/img/product/').$imgName;
+        
+        return $imgName;
     }
 }
