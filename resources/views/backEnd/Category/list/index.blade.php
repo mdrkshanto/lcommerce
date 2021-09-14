@@ -37,10 +37,16 @@ Category List
                         <td>{{ $category->categoryName }}</td>
                         <td>{{ $category->status == '1' ? 'Active' : 'Inactive' }}</td>
                         <td>
-                            <div class="btn-group btn-group-sm">
-                                <a href="" class="btn btn-success">Update</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+                          <div class="input-group input-group-sm btn-group justify-content-center">
+                            <div class="input-group-prepend">
+                              <a href="{{ route('editCategory',[$category->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
+                            <div class="input-group-apend">
+                              <form action="{{ route('deleteCategory',[$category->id]) }}" method="post">
+                                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                              </form>
+                            </div>
+                          </div>
                         </td>
                     </tr>
                     @endforeach

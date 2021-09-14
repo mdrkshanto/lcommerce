@@ -30,6 +30,9 @@ Route::post('/add-product-action', [ProductController::class,'addProductAction']
 Route::get('/category-list', [CategoryController::class,'index'])->name('categoryList');
 Route::get('/add-category', [CategoryController::class,'addCategory'])->name('addCategory');
 Route::post('/add-category-action', [CategoryController::class,'addCategoryAction'])->name('addCategoryAction');
+Route::get('/edit-category-{id}', [CategoryController::class,'editCategory'])->name('editCategory');
+Route::post('/update-category-{id}', [CategoryController::class,'updateCategory'])->name('updateCategory');
+Route::post('/delete-category-{id}', [CategoryController::class,'deleteCategory'])->name('deleteCategory');
 
 
 
