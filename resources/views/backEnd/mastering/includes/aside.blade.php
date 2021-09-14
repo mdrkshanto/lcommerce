@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{ route('brandList') }}" class="nav-link{{  request()->routeIs('brandList') || request()->routeIs('addBrand') || request()->routeIs('editBrand') ? ' bg-secondary active' : '' }}">
                 <i class="fas fa-certificate"></i>
                 <p>Brands</p>
             </a>

@@ -1,6 +1,6 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Edit a {{ $data->categoryName }} category
+Edit "{{ $data->categoryName }}" category
 @endsection
 @section('backEndBody')
 <!-- Content Wrapper. Contains page content -->
@@ -21,19 +21,21 @@ Edit a {{ $data->categoryName }} category
                 @csrf
                 <div class="card-body">
                     <div class="container col-6">
+                        @error('categoryName')<div class="text-danger small">{{ $message }}</div>@enderror
+                        @error('categoryStatus')<div class="text-danger small">{{ $message }}</div>@enderror
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Category Name</label>
-                                    <input type="text" class="form-control form-control-sm" name="categoryName" placeholder="Category Name" value="{{ $data->categoryName }}">
+                                    <input type="text" class="form-control form-control-sm @error('categoryName') is-invalid @enderror" name="categoryName" placeholder="Category Name" value="{{ $data->categoryName }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Category Status</label>
-                                    <select class="form-control form-control-sm text-center" name="categoryStatus">
-                                        <option value="0">Inactive</option>
-                                        <option value="1" selected>Active</option>
+                                    <select class="form-control form-control-sm text-center @error('categoryStatus') is-invalid @enderror" name="categoryStatus">
+                                        <option value="0"{{ $data->status == 0 ? 'selected' : '' }}>Inactive</option>
+                                        <option value="1"{{ $data->status == 1 ? 'selected' : '' }}>Active</option>
                                     </select>
                                 </div>
                             </div>

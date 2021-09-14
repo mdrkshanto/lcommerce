@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontEndRouteController;
 use App\Http\Controllers\ProductController;
@@ -33,6 +34,13 @@ Route::post('/add-category-action', [CategoryController::class,'addCategoryActio
 Route::get('/edit-category-{id}', [CategoryController::class,'editCategory'])->name('editCategory');
 Route::post('/update-category-{id}', [CategoryController::class,'updateCategory'])->name('updateCategory');
 Route::post('/delete-category-{id}', [CategoryController::class,'deleteCategory'])->name('deleteCategory');
+    // Brand
+Route::get('/brand-list', [BrandController::class,'index'])->name('brandList');
+Route::get('/add-brand', [BrandController::class,'addBrand'])->name('addBrand');
+Route::post('/add-brand-action', [BrandController::class,'addBrandAction'])->name('addBrandAction');
+// Route::get('/edit-brand-{id}', [BrandController::class,'editCategory'])->name('editCategory');
+// Route::post('/update-brand-{id}', [BrandController::class,'updateCategory'])->name('updateCategory');
+// Route::post('/delete-brand-{id}', [BrandController::class,'deleteCategory'])->name('deleteCategory');
 
 
 

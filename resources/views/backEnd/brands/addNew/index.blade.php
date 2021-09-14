@@ -1,6 +1,6 @@
 @extends('backEnd.mastering.index')
 @section('backEndTitle')
-Create a new category
+Create a new Brand
 @endsection
 @section('backEndBody')
 <!-- Content Wrapper. Contains page content -->
@@ -13,25 +13,25 @@ Create a new category
           <div class="card-header">
               <div class="row justify-content-between">
                   <h3 class="card-title">@yield('backEndTitle')</h3>
-                  <a href="{{ route('categoryList') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Category list</a>
+                  <a href="{{ route('brandList') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Brand list</a>
               </div>
           </div>
           <!-- /.card-header -->
-            <form action="{{ route('addCategoryAction') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+            <form action="{{ route('addBrandAction') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="container col-6">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Category Name</label>
-                                    <input type="text" class="form-control form-control-sm" name="categoryName" placeholder="Category Name">
+                                    <label class="form-label">Brand Name</label>
+                                    <input type="text" class="form-control form-control-sm" name="brandName" placeholder="Brand Name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Category Status</label>
-                                    <select class="form-control form-control-sm text-center" name="categoryStatus">
+                                    <label class="form-label">Brand Status</label>
+                                    <select class="form-control form-control-sm text-center" name="brandStatus">
                                         <option value="0">Inactive</option>
                                         <option value="1" selected>Active</option>
                                     </select>
