@@ -39,10 +39,10 @@ Brand List
                         <td>
                           <div class="input-group input-group-sm btn-group justify-content-center">
                             <div class="input-group-prepend">
-                              <a href="{{-- route('editBrand',[$brand->id]) --}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                              <a href="{{ route('editBrand',[$brand->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                             <div class="input-group-apend">
-                              <form action="{{-- route('deleteBrand',[$brand->id]) --}}" method="post">
+                              <form action="{{ route('deleteBrand',[$brand->id]) }}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
                               </form>
