@@ -27,8 +27,8 @@ class CreateProductsTable extends Migration
             $table->text('productDescription');
             $table->text('productDeliveryProcess');
             $table->enum('productStatus',['1','2']);
-            $table->integer('updatedBy');
             $table->integer('createdBy');
+            $table->integer('updatedBy');
             $table->timestamps();
         });
     }

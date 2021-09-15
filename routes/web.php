@@ -43,7 +43,6 @@ Route::post('/update-brand-{id}', [BrandController::class,'updateBrand'])->name(
 Route::post('/delete-brand-{id}', [BrandController::class,'deleteBrand'])->name('deleteBrand');
 
 
-
 // Admin Routes
 Route::get('/dashboard', [ProductController::class,'index'])->middleware(['auth'])->name('dashboard');
 require __DIR__.'/auth.php';
