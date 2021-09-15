@@ -58,6 +58,7 @@ class ProductController extends Controller
         // }
 
         foreach($request->file('productImage') as $key => $value){
+            // dd($value);
             // $imgName = time().rand().'.'.$value->getClientOriginalExtension();
             // $imgPath = public_path('forntEnd/assets/img/product/').$imgName;
             // Image::make($value)->save($imgPath);
