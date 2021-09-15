@@ -28,7 +28,6 @@ class ProductController extends Controller
         //     'productName' => 'required | alpha',
         //     'productCetegory' => 'required | numeric',
         //     'productBrand' => 'required | numeric',
-        //     // 'productName' => 'required | alpha',
         // ]);
 
         // $img = $request->file('productImage');
