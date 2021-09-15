@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->integer('cetegoryId');
             $table->integer('brandId');
             $table->string('productModel');
-            $table->string('productColor');
             $table->float('productRegularPrice',10,2);
             $table->float('productDiscountPrice',10,2);
             $table->text('productDetails');

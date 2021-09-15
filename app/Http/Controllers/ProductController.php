@@ -48,7 +48,7 @@ class ProductController extends Controller
         $product->productDescription        = $request->productDescription;
         $product->productDeliveryProcess    = $request->deliveryProcess;
         $product->productStatus             = $request->productStatus;
-        $product->createdBy                 = Auth::id();
+        $product->createdBy                 = Auth::user()->name;
         $product->save();
 
         // foreach($request->productColor as $key => $value){
