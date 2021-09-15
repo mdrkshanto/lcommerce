@@ -64,8 +64,8 @@ class ProductController extends Controller
 
             // $img = $request->file('productImage');
             $imgName = time().rand().'.'.$value->getClientOriginalExtension();
-            $value->move(public_path('forntEnd/assets/img/product'),$imgName);
-            $imgPath = public_path('forntEnd/assets/img/product/').$imgName;
+            $value->move(public_path('frontEnd/assets/img/product'),$imgName);
+            $imgPath = 'frontEnd/assets/img/product/'.$imgName;
 
             $productImg = new ProductImage();
             $productImg->productId = $product->id;
