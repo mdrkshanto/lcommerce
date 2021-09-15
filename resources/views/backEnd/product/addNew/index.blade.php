@@ -155,7 +155,7 @@ Create a new product
               <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <div class="custom-file">
-                    <input type="file" accept="image/*" class="custom-file-input" name="productImage[]">
+                    <input type="file" accept="image/*" class="custom-file-input" name="productImage">
                     <label class="custom-file-label">Select Image</label>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ Create a new product
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage[]"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-prepend"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select></div><div class="input-group-append"><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-prepend"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select></div><div class="input-group-append"><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){

@@ -37,10 +37,10 @@ class BrandController extends Controller
 
     public function updateBrand(Request $request, $id){
         $brand = Brand::find($id);
-        $request->validate([
-            'brandName' => 'required|unique:brands,brandName',
-            'brandStatus' => 'required',
-        ]);
+        // $request->validate([
+        //     'brandName' => 'required|unique:brands,brandName',
+        //     'brandStatus' => 'required',
+        // ]);
         $brand->brandName = ucwords(Str::lower($request->brandName));
         $brand->status = $request->brandStatus;
         $brand->update();
