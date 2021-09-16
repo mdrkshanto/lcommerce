@@ -18,7 +18,7 @@ Product List
             <!-- /.card-header -->
 
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-responsive table-striped align-middle text-center table-hover small w-100">
+              <table id="example1" class="table table-sm table-dark table-striped align-middle text-center table-hover">
                 <thead>
                     <tr>
                         <th>Name</th>
