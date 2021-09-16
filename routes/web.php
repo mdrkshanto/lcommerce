@@ -42,6 +42,14 @@ Route::get('/edit-brand-{id}', [BrandController::class,'editBrand'])->name('edit
 Route::post('/update-brand-{id}', [BrandController::class,'updateBrand'])->name('updateBrand');
 Route::post('/delete-brand-{id}', [BrandController::class,'deleteBrand'])->name('deleteBrand');
 
+    // Brand
+Route::get('/product-list', [ProductController::class,'index'])->name('productList');
+Route::get('/add-product', [ProductController::class,'addProduct'])->name('addProduct');
+Route::post('/add-product-action', [ProductController::class,'addProductAction'])->name('addProductAction');
+Route::get('/edit-product-{id}', [ProductController::class,'editProduct'])->name('editProduct');
+Route::post('/update-product-{id}', [ProductController::class,'updateProduct'])->name('updateProduct');
+Route::post('/delete-product-{id}', [ProductController::class,'deleteProduct'])->name('deleteProduct');
+
 
 // Admin Routes
 Route::get('/dashboard', [ProductController::class,'index'])->middleware(['auth'])->name('dashboard');

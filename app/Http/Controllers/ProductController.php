@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function index(){
-        return view('backEnd.product.list.index');
+        $products = Product::with('category','brand')->get();
+        return $products;
+        return view('backEnd.product.list.index',compact('products'));
     }
     public function addProduct(){
         $categories = Category::where('status','1')->get();

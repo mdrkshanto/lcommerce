@@ -16,33 +16,75 @@ Product List
                 </div>
             </div>
             <!-- /.card-header -->
+
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-bordered table-striped align-middle text-center table-hover small">
+              <table id="example1" class="table table-sm table-dark table-responsive table-striped align-middle text-center table-hover small w-100">
                 <thead>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>Name</th>
+                        <th>Cetegory</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Colors</th>
+                        <th>Regular Price</th>
+                        <th>Discount Price</th>
+                        <th>Details</th>
+                        <th>Short Description</th>
+                        <th>Description</th>
+                        <th>Delivery Process</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($products as $product)
                     <tr>
-                        <td>Trident</td>
-                        <td>Internet Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productCategory }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>{{ $product->productName }}</td>
+                        <td>
+                            <div class="input-group input-group-sm btn-group btn-group-sm justify-content-center">
+                                <div class="input-group-prepend">
+                                  <a href="{{-- route('editBrand',[$brand->id]) --}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                </div>
+                                <div class="input-group-apend">
+                                  <form action="{{-- route('deleteBrand',[$brand->id]) --}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                  </form>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th>Name</th>
+                        <th>Cetegory</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Colors</th>
+                        <th>Regular Price</th>
+                        <th>Discount Price</th>
+                        <th>Details</th>
+                        <th>Short Description</th>
+                        <th>Description</th>
+                        <th>Delivery Process</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
               </table>
