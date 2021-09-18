@@ -18,8 +18,8 @@ Product List
             <!-- /.card-header -->
 
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-striped align-middle text-center table-hover">
-                <thead>
+              <table id="example1" class="table table-sm table-responsive table-dark table-striped align-middle text-center table-hover">
+                <thead class="text-nowrap">
                     <tr>
                         <th>Name</th>
                         <th>Cetegory</th>
@@ -69,7 +69,7 @@ Product List
                     </tr>
                     @endforeach
                 </tbody>
-                <tfoot>
+                <tfoot class="text-nowrap">
                     <tr>
                         <th>Name</th>
                         <th>Cetegory</th>
@@ -114,7 +114,7 @@ Product List
 <script>
     $(function () {
       $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "responsive": false, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", /*"colvis"*/]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       $('#example2').DataTable({
