@@ -54,7 +54,7 @@ Product List
                         <td>{{ $product->productName }}</td>
                         <td>{{ $product->productName }}</td>
                         <td>
-                            <div class="input-group input-group-sm btn-group btn-group-sm justify-content-center">
+                            <div class="flex-nowrap input-group input-group-sm btn-group btn-group-sm justify-content-center">
                                 <div class="input-group-prepend">
                                   <a href="{{-- route('editBrand',[$brand->id]) --}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                                 </div>

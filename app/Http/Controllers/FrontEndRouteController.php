@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FrontEndRouteController extends Controller
 {
     public function index(){
-        $products = Product::where('status','1')->get();
+        $products = Product::where('productStatus','1')->get();
         $productImgs = ProductImage::all();
         return view('frontEnd.home.index',compact('products','productImgs'));
     }
