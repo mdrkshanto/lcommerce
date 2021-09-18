@@ -21,6 +21,7 @@ Product List
               <table id="example1" class="table table-sm table-responsive table-dark table-striped align-middle text-center table-hover">
                 <thead class="text-nowrap">
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
                         <th>Cetegory</th>
                         <th>Brand</th>
@@ -38,8 +39,10 @@ Product List
                     </tr>
                 </thead>
                 <tbody>
+                    @php($i=1)
                     @foreach ($products as $product)
                     <tr>
+                        <td>{{ $i++ }}</td>
                         <td>{{ $product->productName }}</td>
                         <td>{{ $product->productCategory }}</td>
                         <td>{{ $product->productName }}</td>
@@ -71,6 +74,7 @@ Product List
                 </tbody>
                 <tfoot class="text-nowrap">
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
                         <th>Cetegory</th>
                         <th>Brand</th>
