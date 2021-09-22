@@ -16,7 +16,7 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::with('category','brand')->get();
-        // return $products;
+        return $products;
         return view('backEnd.product.list.index',compact('products'));
     }
     public function addProduct(){
@@ -59,24 +59,21 @@ class ProductController extends Controller
         //     $productColor->save();
         // }
 
-        $productImgs = $$request->file('productImage[]');
-        // $productImageTypes = $request->productImageType;
-
-        foreach($productImgs as $productImage){
+        foreach($request->file('productImage') as $key => $value){
             // dd($value);
             // $imgName = time().rand().'.'.$value->getClientOriginalExtension();
             // $imgPath = public_path('forntEnd/assets/img/product/').$imgName;
             // Image::make($value)->save($imgPath);
 
             // $img = $request->file('productImage');
-            $imgName = time().rand().'.'.$productImage->getClientOriginalExtension();
-            $productImage->move(public_path('frontEnd/assets/img/product'),$imgName);
+            $imgName = time().rand().'.'.$value->getClientOriginalExtension();
+            $value->move(public_path('frontEnd/assets/img/product'),$imgName);
             $imgPath = 'frontEnd/assets/img/product/'.$imgName;
 
             $productImg = new ProductImage();
             $productImg->productId = $product->id;
             $productImg->imagePath = $imgPath;
-            $productImg->imageType = $request->productImageType;
+            $productImg->imageType = $request->productImageType[$key];
             $productImg->save();
         }
         return 'success';
