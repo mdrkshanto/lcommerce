@@ -40,22 +40,22 @@ Product List
                 </thead>
                 <tbody>
                     @php($i=1)
-                    @foreach ($products as $product)
+                    {{-- @foreach ($products as $product) --}}
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productCategory }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
-                        <td>{{ $product->productName }}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productCategory --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
+                        <td>{{-- $product->productName --}}</td>
                         <td>
                             <div class="flex-nowrap input-group input-group-sm btn-group btn-group-sm justify-content-center">
                                 <div class="input-group-prepend">
@@ -70,7 +70,7 @@ Product List
                             </div>
                         </td>
                     </tr>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </tbody>
                 <tfoot class="text-nowrap">
                     <tr>

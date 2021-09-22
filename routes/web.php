@@ -25,8 +25,11 @@ Route::get('/product', [FrontEndRouteController::class, 'product'])->name('produ
 // Back End Routes
     // Products
 Route::get('/product-list', [ProductController::class,'index'])->name('productList');
-Route::get('/add-product', [ProductController::class,'addProduct'])->name('addProduct');
-Route::post('/add-product-action', [ProductController::class,'addProductAction'])->name('addProductAction');
+Route::get('/add-new', [ProductController::class,'addNew'])->name('addProduct');
+Route::post('/add', [ProductController::class,'add'])->name('addProductAction');
+Route::get('/edit-product-{id}', [ProductController::class,'editProduct'])->name('editProduct');
+Route::post('/update-product-{id}', [ProductController::class,'updateProduct'])->name('updateProduct');
+Route::post('/delete-product-{id}', [ProductController::class,'deleteProduct'])->name('deleteProduct');
     // Category
 Route::get('/category-list', [CategoryController::class,'index'])->name('categoryList');
 Route::get('/add-category', [CategoryController::class,'addCategory'])->name('addCategory');
@@ -43,12 +46,6 @@ Route::post('/update-brand-{id}', [BrandController::class,'updateBrand'])->name(
 Route::post('/delete-brand-{id}', [BrandController::class,'deleteBrand'])->name('deleteBrand');
 
     // Brand
-Route::get('/product-list', [ProductController::class,'index'])->name('productList');
-Route::get('/add-product', [ProductController::class,'addProduct'])->name('addProduct');
-Route::post('/add-product-action', [ProductController::class,'addProductAction'])->name('addProductAction');
-Route::get('/edit-product-{id}', [ProductController::class,'editProduct'])->name('editProduct');
-Route::post('/update-product-{id}', [ProductController::class,'updateProduct'])->name('updateProduct');
-Route::post('/delete-product-{id}', [ProductController::class,'deleteProduct'])->name('deleteProduct');
 
 
 // Admin Routes

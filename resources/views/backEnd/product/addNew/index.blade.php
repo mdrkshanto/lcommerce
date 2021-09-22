@@ -24,13 +24,13 @@ Create a new product
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Name</label>
-                            <input type="text" class="form-control form-control-sm" name="productName" placeholder="Product Name">
+                            <input type="text" class="form-control form-control-sm" name="name" placeholder="Product Name">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Cetegory</label>
-                            <select class="form-control form-control-sm form-select form-select-sm" name="productCetegory">
+                            <select class="form-control form-control-sm form-select form-select-sm" name="cetegory">
                                 @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->categoryName }}</option>
                                 @endforeach
@@ -40,8 +40,8 @@ Create a new product
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label class="form-label">Product Brand</label>
-                            <select class="form-control form-control-sm form-select form-select-sm" name="productBrand">
-                                @foreach ($brands as $brand)
+                            <select class="form-control form-control-sm form-select form-select-sm" name="brand">
+                                @foreach($brands as $brand)
                                 <option value="{{ $brand->id }}">{{ $brand->brandName }}</option>
                                 @endforeach
                             </select>
@@ -52,7 +52,7 @@ Create a new product
                 <div class="col-md-3">
                     <div class="mb-3">
                         <label class="form-label">Product Model Number</label>
-                        <input type="text" class="form-control form-control-sm" name="productModelNumber" placeholder="Product Model Number">
+                        <input type="text" class="form-control form-control-sm" name="model" placeholder="Product Model Number">
                     </div>
                 </div>
                     <div class="col-md-3">
@@ -66,13 +66,13 @@ Create a new product
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Regular Price</label>
-                            <input type="text" class="form-control form-control-sm" name="productRegularPrice" placeholder="Regular Price">
+                            <input type="text" class="form-control form-control-sm" name="regularPrice" placeholder="Regular Price">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Discount Price</label>
-                            <input type="text" class="form-control form-control-sm" name="productDiscountPrice" placeholder="Discount Price">
+                            <input type="text" class="form-control form-control-sm" name="discountPrice" placeholder="Discount Price">
                         </div>
                     </div>
               </div>
@@ -87,7 +87,7 @@ Create a new product
                               </div>
                               <!-- /.card-header -->
                               <div class="card-body">
-                                <textarea class="productDetails" name="productDetails"></textarea>
+                                <textarea class="productDetails" name="details"></textarea>
                               </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ Create a new product
                               </div>
                               <!-- /.card-header -->
                               <div class="card-body">
-                                <textarea class="productShortDescription" name="productShortDescription"></textarea>
+                                <textarea class="productShortDescription" name="shortDescription"></textarea>
                               </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ Create a new product
                               </div>
                               <!-- /.card-header -->
                               <div class="card-body">
-                                <textarea class="productDescription" name="productDescription"></textarea>
+                                <textarea class="productDescription" name="description"></textarea>
                               </div>
                             </div>
                         </div>
@@ -155,12 +155,12 @@ Create a new product
               <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <div class="custom-file">
-                    <input type="file" accept="image/*" class="custom-file-input" name="productImage[]">
+                    <input type="file" accept="image/*" class="custom-file-input" name="image[]">
                     <label class="custom-file-label">Select Image</label>
                   </div>
                 </div>
                 <div class="input-group-append">
-                  <select class="form-control" name="productImageType[]">
+                  <select class="form-control" name="imageType[]">
                     <option value="1" selected>Main Image</option>
                     <option value="2">Thumb Image</option>
                   </select>
@@ -173,7 +173,7 @@ Create a new product
       <div class="row">
           <div class="col-md-2">
             <div class="input-group-append">
-                <select class="form-control form-control-sm text-center" name="productStatus">
+                <select class="form-control form-control-sm text-center" name="status">
                     <option value="1" selected>Active</option>
                     <option value="2">Inactive</option>
                 </select>
@@ -197,7 +197,7 @@ Create a new product
 <script>
 $(document).ready(function(){
     $('.addImage').click(function(){
-        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="productImage[]"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-prepend"><select class="form-control" name="productImageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select></div><div class="input-group-append"><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
+        $(".productImages").append('<div class="col-md-6 thumbImg"><div class="input-group input-group-sm mb-3"><div class="input-group-prepend"><div class="custom-file"><input type="file" accept="image/*" class="custom-file-input" name="image[]"><label class="custom-file-label">Select Image</label></div></div><div class="input-group-prepend"><select class="form-control" name="imageType[]"><option value="1">Main Image</option><option value="2" selected>Thumb Image</option></select></div><div class="input-group-append"><button type="button" class="btn btn-danger removeProductImg"><i class="fas fa-trash-alt"></i></button></div></div></div>');
         bsCustomFileInput.init();
     });
     $("body").on("click", ".removeProductImg", function(){
