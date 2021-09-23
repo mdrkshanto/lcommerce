@@ -24,6 +24,7 @@ class ProductController extends Controller
     }
 
     public function add(Request $request){
+        // return $request->file('image');
         // dd($request->file('image'));
         // $product = new Product();
         // $product->productName = $request->name;
@@ -41,13 +42,13 @@ class ProductController extends Controller
         // $product->save();
 
 
-        foreach($request->file('image') as $key => $value){
-            $imgName = time().rand().'.'.$value->extension();
-            $value->move(public_path('frontEnd/assets/img/product'),$imgName);
-            $imgPath = 'frontEnd/assets/img/product/'.$imgName;
-            dd($imgPath);
-            // return $request->all();
-        }
+        // foreach($request->file('image') as $key => $value){
+        //     $imgName = time().rand().'.'.$value->extension();
+        //     $value->move(public_path('frontEnd/assets/img/product'),$imgName);
+        //     $imgPath = 'frontEnd/assets/img/product/'.$imgName;
+        //     dd($imgPath);
+        //     // return $request->all();
+        // }
         // $imgs = new ProductImage();
         // $imgs->productId = $product->id;
 
