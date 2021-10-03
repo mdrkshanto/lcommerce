@@ -25,7 +25,7 @@ class ProductController extends Controller
 
     public function add(Request $request){
         // return $request->file('image');
-        dd($request->file('image'));
+        // dd($request->file('image'));
         // $product = new Product();
         // $product->productName = $request->name;
         // $product->categoryId = $request->cetegory;

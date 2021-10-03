@@ -5,22 +5,27 @@ Brand List
 @section('backEndBody')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @if (Session::get('msg'))
-        {{ Session::get('msg') }}
-        @endif
+
         <!-- Main content -->
       <section class="content">
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
                 <div class="row justify-content-between">
-                    <h3 class="card-title">@yield('backEndTitle')</h3>
-                    <a href="{{ route('addBrand') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
+                    <div class="col-md-2"><h3 class="card-title">@yield('backEndTitle')</h3></div>
+                    @if (Session::get('msg'))
+                        <div class="col text-center"><span class="text-success">{{ Session::get('msg') }}</span></div>
+                    @endif
+                    <div class="col-md-2">
+                        <a href="{{ route('addBrand') }}" class="btn btn-sm btn-primary shadow-none fw-bolder">Add New</a>
+                    </div>
+
+
                 </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-sm table-dark table-striped align-middle text-center table-hover">
+              <table id="example1" class="table table-sm table-dark table-hover table-bordered table-responsive table-striped align-middle text-center">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -35,17 +40,17 @@ Brand List
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td>{{ $brand->brandName }}</td>
-                        <td>{{ $brand->status=='1'?'Active':'Inactive' }}</td>
+                        <td>{{ $brand->status=='1'?'Active':$brand->status=='0'?'Inactive' }}</td>
                         <td>
                           <div class="input-group input-group-sm btn-group justify-content-center">
                             <div class="input-group-prepend">
-                              <a href="{{ route('editBrand',[$brand->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('editBrand',[$brand->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                             <div class="input-group-apend">
-                              <form action="{{ route('deleteBrand',[$brand->id]) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
-                              </form>
+                                <form action="{{ route('deleteBrand',[$brand->id]) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </div>
                           </div>
                         </td>
@@ -87,7 +92,7 @@ Brand List
 <script>
     $(function () {
       $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "responsive": false, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", /*"colvis"*/]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
       $('#example2').DataTable({

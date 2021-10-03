@@ -17,7 +17,7 @@ Create a new product
               </div>
           </div>
           <!-- /.card-header -->
-          <form action="{{ route('addProductAction') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+    <form action="{{ route('addProductAction') }}" method="post" autocomplete="off" enctype="multipart/form-data">
             @csrf
             <div class="card-body">
               <div class="row">
@@ -49,12 +49,12 @@ Create a new product
                     </div>
               </div>
               <div class="row">
-                <div class="col-md-3">
-                    <div class="mb-3">
-                        <label class="form-label">Product Model Number</label>
-                        <input type="text" class="form-control form-control-sm" name="model" placeholder="Product Model Number">
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label class="form-label">Product Model Number</label>
+                            <input type="text" class="form-control form-control-sm" name="model" placeholder="Product Model Number">
+                        </div>
                     </div>
-                </div>
                     <div class="col-md-3">
                       <div class="row justify-content-between input-group-sm input-group">
                         <label class="form-label">Product Color</label>

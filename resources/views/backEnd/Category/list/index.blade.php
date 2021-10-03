@@ -31,18 +31,18 @@ Category List
                 </thead>
                 <tbody>
                     @php($i = 1)
-                    @foreach ($categories as $category)
+                    {{-- @foreach ($categories as $category) --}}
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $category->categoryName }}</td>
-                        <td>{{ $category->status == '1' ? 'Active' : 'Inactive' }}</td>
+                        <td>{{-- $category->categoryName --}}</td>
+                        <td>{{-- $category->status=='1'?'Active':'Inactive' --}}</td>
                         <td>
                           <div class="input-group input-group-sm btn-group justify-content-center">
                             <div class="input-group-prepend">
-                              <a href="{{ route('editCategory',[$category->id]) }}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                              <a href="{{-- route('editCategory',[$category->id]) --}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                             <div class="input-group-apend">
-                              <form action="{{ route('deleteCategory',[$category->id]) }}" method="post">
+                              <form action="{{-- route('deleteCategory',[$category->id]) --}}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
                               </form>
@@ -50,7 +50,7 @@ Category List
                           </div>
                         </td>
                     </tr>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </tbody>
                 <tfoot>
                     <tr>
@@ -88,17 +88,18 @@ Category List
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", /*"colvis"*/]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
+        "buttons": ["copy", "csv", "excel", "pdf", "print", /*"colvis"*/]
+      })
+      .buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
     });
 </script>
 @endsection
